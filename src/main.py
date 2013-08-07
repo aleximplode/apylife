@@ -8,8 +8,8 @@ __author__ = 'alex'
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 400
 BG_COLOUR = (255, 255, 255)
-CELL_WIDTH = 20
-CELL_HEIGHT = 20
+CELL_WIDTH = 40
+CELL_HEIGHT = 40
 
 
 def start():
@@ -86,10 +86,11 @@ def processCells(cells):
 def render(screen, cells):
     for row in range(CELL_HEIGHT):
         for col in range(CELL_WIDTH):
-            cell = pygame.Rect(col * CELL_WIDTH, row * CELL_HEIGHT, SCREEN_WIDTH / CELL_WIDTH, SCREEN_HEIGHT / CELL_HEIGHT)
+            cell = pygame.Rect(col * (SCREEN_WIDTH / CELL_WIDTH), row * (SCREEN_HEIGHT / CELL_HEIGHT),
+                               SCREEN_WIDTH / CELL_WIDTH, SCREEN_HEIGHT / CELL_HEIGHT)
             colour = (0, 0, 0)
 
-            border = 2
+            border = 1
             if cells[row][col] == 1:
                 border = 0
 
